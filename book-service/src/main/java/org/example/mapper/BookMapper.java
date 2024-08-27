@@ -11,6 +11,6 @@ import org.example.entity.Book;
  */
 @Mapper
 public interface BookMapper {
-    @Select("SELECT * FROM book WHERE book_id = #{bookId}")
+    @Select("SELECT * FROM book WHERE bid = #{bookId}")
     Book findBookByBookId(@Param("bookId") int bookId);
 }

@@ -12,14 +12,14 @@ import javax.persistence.*;
  * @version 1.0
  */
 @Entity
-@Table(name = "student") // Specify the table name
+@Table(name = "student")
 @Data
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "student_id")
+    // @Column(name = "student_id")
     //TODO: 映射失败
-    int studentId;
+    int uid;
     String name;
     String gender;
     int grade;

@@ -12,6 +12,7 @@ import org.example.entity.User;
 @Mapper
 public interface UserMapper {
 
-    @Select("SELECT * FROM student WHERE student_id = #{studentId}")
-    User findUsernameByStudentId(@Param("studentId") int studentId);
+    @Select("SELECT * FROM student WHERE uid = #{uid}")
+    User findUserByStudentId(@Param("uid") int uid);
+    // User findUserByStudentId(@Param("uid") int studentId); // 注意两者必须相同
 }
