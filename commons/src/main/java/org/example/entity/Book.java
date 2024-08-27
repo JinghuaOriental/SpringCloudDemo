@@ -14,8 +14,7 @@ import javax.persistence.*;
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "book_id")
-    int bookId;
+    int bid;
     String title;
     String price;
     String desc;
