@@ -1,2 +1,10 @@
 server:
     port: 8201
+spring:
+    datasource:
+        username: hyj
+        password: mimamima1
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://10.31.79.44:3306/study
+    jpa:
+        open-in-view: false
