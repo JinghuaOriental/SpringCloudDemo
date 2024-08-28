@@ -1,9 +1,11 @@
 package org.example.entity;
 
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import jakarta.persistence.*;
+import lombok.NoArgsConstructor;
 
 /**
  * Represents a user entity with a mapping to the database field.
@@ -13,6 +15,8 @@ import jakarta.persistence.*;
  */
 @Entity
 @Table(name = "student")
+@AllArgsConstructor
+@NoArgsConstructor
 @Data
 public class User {
     @Id

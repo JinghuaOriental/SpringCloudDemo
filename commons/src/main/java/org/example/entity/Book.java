@@ -1,9 +1,10 @@
 package org.example.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-// import javax.persistence.*;
 
 /**
  * @author Aaso
@@ -11,12 +12,14 @@ import lombok.Data;
  */
 @Entity
 @Table(name = "book")
+@AllArgsConstructor
+@NoArgsConstructor
 @Data
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int bid;
     String title;
-    String price;
+    double price;
     String desc;
 }
