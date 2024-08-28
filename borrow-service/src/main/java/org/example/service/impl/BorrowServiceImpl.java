@@ -6,8 +6,9 @@ import org.example.entity.User;
 import org.example.entity.UserBorrowDetail;
 import org.example.mapper.BorrowMapper;
 import org.example.service.BorrowService;
+import org.example.service.client.BookClient;
+import org.example.service.client.UserClient;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -19,9 +20,11 @@ import java.util.stream.Collectors;
  */
 @Service
 public class BorrowServiceImpl implements BorrowService {
+    @Resource
+    UserClient userClient;
 
     @Resource
-    RestTemplate restTemplate;
+    BookClient bookClient;
 
     @Resource
     BorrowMapper borrowMapper;
@@ -33,11 +36,12 @@ public class BorrowServiceImpl implements BorrowService {
         // RestTemplate template = new RestTemplate();
         //这里通过调用getForObject来请求其他服务，并将结果自动进行封装
         //获取User信息
-        User user = restTemplate.getForObject("http://userservice/user/"+uid, User.class);
+        // User user = restTemplate.getForObject("http://userservice/user/"+uid, User.class);
+        User user = userClient.getUserById(uid);
         //获取每一本书的详细信息
         List<Book> bookList = borrow
                 .stream()
-                .map(b -> restTemplate.getForObject("http://bookservice/book/"+b.getBid(), Book.class))
+                .map(b -> bookClient.getBookById(b.getBid()))
                 .collect(Collectors.toList());
         return new UserBorrowDetail(user, bookList);
     }

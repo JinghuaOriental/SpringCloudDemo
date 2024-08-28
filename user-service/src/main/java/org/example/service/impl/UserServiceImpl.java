@@ -13,11 +13,14 @@ import javax.annotation.Resource;
  */
 @Service
 public class UserServiceImpl implements UserService {
+    public static int invokeCount = 1;
+
     @Resource
     UserMapper userMapper;
 
     @Override
     public User getUserById(int studentId) {
+        System.out.println("调用次数：" + (invokeCount++));
         return userMapper.findUserByStudentId(studentId);
     }
 }
