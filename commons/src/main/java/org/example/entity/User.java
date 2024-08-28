@@ -3,7 +3,7 @@ package org.example.entity;
 
 import lombok.Data;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 /**
  * Represents a user entity with a mapping to the database field.

@@ -2,7 +2,7 @@ package org.example.entity;
 
 import lombok.Data;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 /**
  * @author Aaso
