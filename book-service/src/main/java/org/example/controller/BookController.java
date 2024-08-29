@@ -1,5 +1,6 @@
 package org.example.controller;
 
+import jakarta.servlet.http.HttpServletRequest;
 import org.example.entity.Book;
 import org.example.service.BookService;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,7 +20,8 @@ public class BookController {
     BookService bookService;
 
     @RequestMapping("/book/{bookId}")
-    public Book getBook(@PathVariable("bookId") int bookId) {
+    public Book getBook(@PathVariable("bookId") int bookId, HttpServletRequest request) {
+        System.out.println(request.getHeader("Test"));
         return bookService.getBookById(bookId);
     }
 }
