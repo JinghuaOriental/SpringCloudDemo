@@ -7,7 +7,7 @@ spring:
         username: hyj
         password: mimamima1
         driver-class-name: com.mysql.cj.jdbc.Driver
-        url: jdbc:mysql://10.31.79.44:3306/study
+        url: jdbc:mysql://localhost:3306/study
 eureka:
     # 注意：这里由于我们修改成自定义的地址，需要在hosts文件中将其解析到127.0.0.1才能回到localhost
     # Mac下文件路径为/etc/hosts，Windows下为C:\Windows\system32\drivers\etc\hosts：

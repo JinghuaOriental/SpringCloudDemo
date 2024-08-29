@@ -1,3 +1,6 @@
+# 注意：book-service的配置文件已经变成了
+# "D:\Code\Java_files\Java_learning_IDEA\SpringCloudProjects\tryentity\bookservice-dev.yml"
+# 注意：修改那里的设置后还要commit提交后才生效
 server:
     port: 8201
 spring:
@@ -5,7 +8,7 @@ spring:
         username: hyj
         password: mimamima1
         driver-class-name: com.mysql.cj.jdbc.Driver
-        url: jdbc:mysql://10.31.79.44:3306/study
+        url: jdbc:mysql://localhost:3306/study
     jpa:
         open-in-view: false
     application:
