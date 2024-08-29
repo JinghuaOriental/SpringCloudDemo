@@ -1,0 +1,23 @@
+server:
+    port: 8700
+spring:
+    application:
+        name: configserver
+    datasource:
+        username: hyj
+        password: mimamima1
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://10.31.79.44:3306/study
+    cloud:
+        config:
+            server:
+                # 注意：代码要commit之后才有反应
+                git:
+                    # 这里填写的是本地仓库地址，远程仓库直接填写远程仓库地址 http://git...
+                    uri: file://D:/Code/Java_files/Java_learning_IDEA/SpringCloudProjects/tryentity
+                    # 默认分支设定为你自己本地或是远程分支的名称
+                    default-label: main
+eureka:
+    client:
+        service-url:
+            defaultZone: http://localhost:8801/eureka, http://localhost:8802/eureka
